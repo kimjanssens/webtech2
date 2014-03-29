@@ -1,6 +1,8 @@
 webtech2
 ========
-## Github ##
+This is a repository for my school course Webtech 2. Here you will find all my projects of this years course.
+
+## Getting to know Github ##
 - Status
 	> Show what files are ready to be committed or what changes are pending.
 	- git status
@@ -17,6 +19,9 @@ webtech2
 	- git pull alias branch
 	> Push your commits to the repository at alias origin and to the branch master
 	- git push
+- Removing
+	> Romoving a file will delete the selected file from your repository
+	- git rm -r filename
 - Branching
 	> Is used to work on your current project without compromising your old version.
 	- git checkout -b branchname
