@@ -95,12 +95,7 @@
           $("#icon").addClass("cloudy");
   			}
 
-        if (localStorage==null) {
-          alert("leeg");
-        }else{
-          alert("niet leeg");
-        }
-        if(((time_now - lastclear) > 1000*60*60) || (localStorage=null)) {
+        if(((time_now - lastclear) > 1000*60*60) || (localStorage.getItem("temperatuur")==null)) {
     			localStorage.clear();
     			localStorage.setItem("lastclear", time_now);
 
