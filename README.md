@@ -1,8 +1,10 @@
 webtech2
 ========
-This is a repository for my school course Webtech 2. Here you will find all my projects of this years course.
-
-## Getting to know Github ##
+This is a repository of [Kim Janssens](http://www.kimjanssens.be) for the course Webtech 2 from [Interactive Multimedia Design](http://www.weareimd.be/)  at the [Thomas More](http://www.thomasmore.be/) college in Mechelen. Here you will find all the projects of this years course.
+##Github##
+###What it is###
+GitHub is a web-based hosting service for software development projects that use the Git revision control system. GitHub offers both paid plans for private repositories, and free accounts for open source projects.
+###Git concepts###
 - Status
 	> Show what files are ready to be committed or what changes are pending.
 	- git status
@@ -43,7 +45,38 @@ This is a repository for my school course Webtech 2. Here you will find all my p
 	- git fetch upstream
 	- git merge upstream/master
 
-## Animations ##
+## CSS3 Animations ##
+###2D transforms###
+With CSS3 transform, we can move, scale, turn, spin, and stretch elements.
+
+A transformation is an effect that lets an element change shape, size and position.
+
+- translate()
+- rotate()
+- scale()
+- skew()
+- matrix()
+
+###3D transforms###
+CSS3 allows you to format your elements using 3D transforms.
+
+- rotateX()
+- rotateY()
+
+###animations###
+An animation lets an element gradually change from one style to another.
+You can change as many properties you want, as many times you want.
+
+You can specify when the change will happen in percent, or you can use the keywords "from" and "to" (which represents 0% and 100%).
+0% represents the start of the animation, 100% is when the animation is complete.
+
+###transitions###
+CSS3 transitions are effects that let an element gradually change from one style to another.
+
+To do this, you must specify two things:
+
+- the CSS property you want to add an effect to
+- the duration of the effect
 
 ## Advanced JS ##
 
