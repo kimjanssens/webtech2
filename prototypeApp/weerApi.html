@@ -5,6 +5,92 @@
 	<title>weerApi</title>
   <link rel="stylesheet" href="reset.css">
   <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+  <script>
+//Geolocatie binnenhalen
+var l=document.getElementById("locatie");
+navigator.geolocation.getCurrentPosition(succes);
+
+function succes(position){
+  //Geolocatie
+  var latitude =  position.coords.latitude; 
+  var longitude = position.coords.longitude;
+  //Localstorage clearen
+  var lastclear = localStorage.getItem("lastclear");
+  var time_now  = (new Date()).getTime();
+  //Localstorage binnenhalen
+  var cel = localStorage.getItem("cel");
+  var locatie = localStorage.getItem("locatie");
+  var beschrijving = localStorage.getItem("beschrijving");
+  var neerslag = localStorage.getItem("neerslag");
+  var wind = localStorage.getItem("wind");
+  var min = localStorage.getItem("min");
+  var max = localStorage.getItem("max");
+  var week = localStorage.getItem("beschrijvingWeek");
+
+  //Dag van de week bepalen
+  var d=new Date();
+  var weekday=new Array(7);
+    weekday[0]="Sunday";
+    weekday[1]="Monday";
+    weekday[2]="Tuesday";
+    weekday[3]="Wednesday";
+    weekday[4]="Thursday";
+    weekday[5]="Friday";
+    weekday[6]="Saturday";
+
+  //Binnenhalen van localstorage en in html plaatsen
+  $("#locatie").append(locatie);
+  $("#temperatuur").append(Math.round(cel)+"°");
+  $("#beschrijving").append(beschrijving);
+  $("#neerslag").append(neerslag*100+"%");
+  $("#wind").append(Math.round(wind)+" mph");
+  $("#minMax").append(Math.round(min)+"°-"+Math.round(max)+"°");
+  $("#beschrijvingWeek").append(JSON.parse(week));
+  
+  if(((time_now - lastclear) > 1000*60*60) || (localStorage=null)) {
+    //Checken of storage leeg is en enkel refreshen na 1 uur
+    localStorage.clear();
+    localStorage.setItem("lastclear", time_now);
+
+    $.ajax({
+      //API binnenhalen
+      url: "https://api.forecast.io/forecast/59c8fdf12359bd12e3b39d51a2abe479/"+latitude+","+longitude,
+      dataType: "jsonp"
+    })
+      .done(function(data){
+        console.log(data);
+
+      //Localstorage setten
+      localStorage.setItem("cel",((data.currently.temperature)-32)*5/9);
+      localStorage.setItem("locatie", data.timezone);
+      localStorage.setItem("beschrijving", data.currently.summary);
+      localStorage.setItem("neerslag", data.currently.precipProbability);
+      localStorage.setItem("wind", data.currently.windSpeed);
+      localStorage.setItem("min",((data.daily.data[0].temperatureMin)-32)*5/9);
+      localStorage.setItem("max",((data.daily.data[0].temperatureMax)-32)*5/9);
+
+      //Voorspelling van rest van de week uitlussen
+      var arrayTot = [];
+      for(var i=1; i<8; i++){
+        var beschr = data.daily.data[i].summary;
+        var minWeek = ((data.daily.data[i].temperatureMin)-32)*5/9;
+        var maxWeek = ((data.daily.data[i].temperatureMax)-32)*5/9;
+
+        //Instellen dagen van de week
+        var x = d.getDay()+i;
+        if(x>6){
+          x = x-7;
+        }
+
+        var weekdag = weekday[x];
+        arrayTot = arrayTot + ("<li><h2>"+weekdag+"</h2>"+beschr+"<span>"+Math.round(minWeek)+"°-"+Math.round(maxWeek)+"°</span></li>"); 
+      }
+      localStorage.setItem("beschrijvingWeek", JSON.stringify(arrayTot));
+      
+    });
+  } 
+}
+</script>
 	<style>
   body{
     background-color: #e63500;
@@ -72,94 +158,5 @@
       </ul>
       <ul id="beschrijvingWeek"></ul>
     </div>
-
-<script>
-//Geolocatie binnenhalen
-var l=document.getElementById("locatie");
-navigator.geolocation.getCurrentPosition(succes);
-
-function succes(position){
-  //Geolocatie
-  var latitude =  position.coords.latitude; 
-  var longitude = position.coords.longitude;
-  //Localstorage clearen
-  var lastclear = localStorage.getItem("lastclear");
-  var time_now  = (new Date()).getTime();
-  //Localstorage binnenhalen
-  var cel = localStorage.getItem("cel");
-  var locatie = localStorage.getItem("locatie");
-  var beschrijving = localStorage.getItem("beschrijving");
-  var neerslag = localStorage.getItem("neerslag");
-  var wind = localStorage.getItem("wind");
-  var min = localStorage.getItem("min");
-  var max = localStorage.getItem("max");
-  var week = localStorage.getItem("beschrijvingWeek");
-
-  //Binnenhalen van localstorage en in html plaatsen
-  $("#locatie").append(locatie);
-  $("#temperatuur").append(Math.round(cel)+"°");
-  $("#beschrijving").append(beschrijving);
-  $("#neerslag").append(neerslag*100+"%");
-  $("#wind").append(Math.round(wind)+" mph");
-  $("#minMax").append(Math.round(min)+"°-"+Math.round(max)+"°");
-  $("#beschrijvingWeek").append(JSON.parse(week));
-  
-
-  if((time_now - lastclear) > 1000*60*60) {
-    //Checken of storage leeg is en enkel refreshen na 1 dag
-    localStorage.clear();
-    localStorage.setItem("lastclear", time_now);
-
-    $.ajax({
-      //API binnenhalen
-      url: "https://api.forecast.io/forecast/59c8fdf12359bd12e3b39d51a2abe479/"+latitude+","+longitude,
-      dataType: "jsonp"
-    })
-      .done(function(data){
-        console.log(data);
-
-      //Localstorage setten
-      localStorage.setItem("cel",((data.currently.temperature)-32)*5/9);
-      localStorage.setItem("locatie", data.timezone);
-      localStorage.setItem("beschrijving", data.currently.summary);
-      localStorage.setItem("neerslag", data.currently.precipProbability);
-      localStorage.setItem("wind", data.currently.windSpeed);
-      localStorage.setItem("min",((data.daily.data[0].temperatureMin)-32)*5/9);
-      localStorage.setItem("max",((data.daily.data[0].temperatureMax)-32)*5/9);
-
-      //Dag van de week bepalen
-      var d=new Date();
-      var weekday=new Array(7);
-        weekday[0]="Sunday";
-        weekday[1]="Monday";
-        weekday[2]="Tuesday";
-        weekday[3]="Wednesday";
-        weekday[4]="Thursday";
-        weekday[5]="Friday";
-        weekday[6]="Saturday";
-
-      //Voorspelling van rest van de week uitlussen
-      var arrayTot = [];
-      for(var i=1; i<8; i++){
-        var beschr = data.daily.data[i].summary;
-        var minWeek = ((data.daily.data[i].temperatureMin)-32)*5/9;
-        var maxWeek = ((data.daily.data[i].temperatureMax)-32)*5/9;
-
-        //Instellen dagen van de week
-        var x = d.getDay()+i;
-        if(x>6){
-          x = x-7;
-        }
-
-        var weekdag = weekday[x];
-
-        arrayTot = arrayTot + ("<li><h2>"+weekdag+"</h2>"+beschr+"<span>"+Math.round(minWeek)+"°-"+Math.round(maxWeek)+"°</span></li>"); 
-      }
-      localStorage.setItem("beschrijvingWeek", JSON.stringify(arrayTot));
-      
-    });
-  } 
-}
-</script>
 </body>
 </html>
