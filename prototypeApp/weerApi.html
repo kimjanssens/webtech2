@@ -47,7 +47,7 @@ function succes(position){
   $("#minMax").append(Math.round(min)+"°-"+Math.round(max)+"°");
   $("#beschrijvingWeek").append(JSON.parse(week));
   
-  if(((time_now - lastclear) > 1000*60*60) || (localStorage=null)) {
+  if(((time_now - lastclear) > 1000*60*60) || (localStorage.getItem("cel")==null)) {
     //Checken of storage leeg is en enkel refreshen na 1 uur
     localStorage.clear();
     localStorage.setItem("lastclear", time_now);
