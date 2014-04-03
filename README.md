@@ -88,6 +88,7 @@ This is a weather app I created with the API from forecast.io. Functions I used 
 - AJAX
 - HTML5 geolocation
 - JSONP
+
 ## Terrapke
 Here I took what I learned from the prototype app and animations and used it to make an app for [WeAreIMD](http://www.weareimd.be/). The goal is to invite people to come grab a drink when the weather is nice.
 
