@@ -95,7 +95,12 @@
           $("#icon").addClass("cloudy");
   			}
 
-  			if((time_now - lastclear) > 1000*60*60){
+        if (localStorage==null) {
+          alert("leeg");
+        }else{
+          alert("niet leeg");
+        }
+        if(((time_now - lastclear) > 1000*60*60) || (localStorage=null)) {
     			localStorage.clear();
     			localStorage.setItem("lastclear", time_now);
 
