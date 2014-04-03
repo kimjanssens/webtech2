@@ -1,10 +1,9 @@
 webtech2
 ========
 This is a repository of [Kim Janssens](http://www.kimjanssens.be) for the course Webtech 2 from [Interactive Multimedia Design](http://www.weareimd.be/)  at the [Thomas More](http://www.thomasmore.be/) college in Mechelen. Here you will find all the projects of this years course.
-##Github##
-###What it is###
+## Github
 GitHub is a web-based hosting service for software development projects that use the Git revision control system. GitHub offers both paid plans for private repositories, and free accounts for open source projects.
-###Git concepts###
+### Git concepts
 - Status
 	> Show what files are ready to be committed or what changes are pending.
 	- git status
@@ -45,8 +44,8 @@ GitHub is a web-based hosting service for software development projects that use
 	- git fetch upstream
 	- git merge upstream/master
 
-## CSS3 Animations ##
-###2D transforms###
+## CSS3 Animations
+### 2D transforms
 With CSS3 transform, we can move, scale, turn, spin, and stretch elements.
 
 A transformation is an effect that lets an element change shape, size and position.
@@ -57,20 +56,20 @@ A transformation is an effect that lets an element change shape, size and positi
 - skew()
 - matrix()
 
-###3D transforms###
+### 3D transforms
 CSS3 allows you to format your elements using 3D transforms.
 
 - rotateX()
 - rotateY()
 
-###animations###
+### animations
 An animation lets an element gradually change from one style to another.
 You can change as many properties you want, as many times you want.
 
 You can specify when the change will happen in percent, or you can use the keywords "from" and "to" (which represents 0% and 100%).
 0% represents the start of the animation, 100% is when the animation is complete.
 
-###transitions###
+### transitions
 CSS3 transitions are effects that let an element gradually change from one style to another.
 
 To do this, you must specify two things:
@@ -78,8 +77,18 @@ To do this, you must specify two things:
 - the CSS property you want to add an effect to
 - the duration of the effect
 
-## Advanced JS ##
+## Advanced JS
+Here I got a better view of how jQuery works. I made a dateplanner by creating an own framwork with advanced javascript concepts.
 
-## Prototype App ##
+## Prototype App
+This is a weather app I created with the API from forecast.io. Functions I used to make this project:
 
-## Terrapke ##
+- forecast API
+- localStarage
+- AJAX
+- HTML5 geolocation
+- JSONP
+## Terrapke
+Here I took what I learned from the prototype app and animations and used it to make an app for [WeAreIMD](http://www.weareimd.be/). The goal is to invite people to come grab a drink when the weather is nice.
+## Node.js
+Getting to know it...
