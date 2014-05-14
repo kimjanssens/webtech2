@@ -3,7 +3,9 @@ extends layout
 block content
   h1= title
   h2 All questions
-
+  ul
+   each question, i in questions
+    li= question.message
 
   h2 Your message
   form(method="post", action="/addquestion")

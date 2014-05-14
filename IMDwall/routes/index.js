@@ -6,12 +6,19 @@ router.get('/', function(req, res) {
   res.render('index', { title: 'IMD Wall' });
 });
 
-/*GET messages page*/
+/* GET all messages */
 router.get('/questions', function(req, res) {
-  res.render('questions', { title: 'All questions' });
+    var db = req.db;
+    var collection = db.get('questions');
+    collection.find({},{},function(e,docs){
+        res.render('questions', {
+            "questions" : docs,
+            title: "All questions"
+        });
+    });
 });
 
-/*POST a message*/
+/* POST a message */
 router.post('/addquestion', function(req, res) {
 	var db = req.db;
 
