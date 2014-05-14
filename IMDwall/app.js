@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 
 var mongo = require('mongodb');
 var monk = require('monk');
-var db = monk('mongodb://admin:Webtech2@oceanic.mongohq.com:10086/IMDwall');
+var db = monk('mongodb://kim:981663e5@oceanic.mongohq.com:10086/IMDwall');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');

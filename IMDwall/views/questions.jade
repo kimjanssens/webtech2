@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  h1= title
+  h2 All questions
+
+
+  h2 Your message
+  form(method="post", action="/addquestion")
+   input(type="radio", name="soort", value="question")
+   label(for="question") Question
+   input(type="radio", name="soort", value="answer")
+   label(for="answer") Answer
+   br
+   textarea(placeholder="message", name="message")
+   br
+   button(type="submit") Post message
