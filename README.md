@@ -15,7 +15,7 @@ This is a repository of [Kim Janssens](http://www.kimjanssens.be) for the course
 ## GIT to work
 GitHub is a web-based hosting service for software development projects that use the Git revision control system. GitHub offers both paid plans for private repositories, and free accounts for open source projects.
 
-### Assignment
+#### Assignment
 <dl>
 	<dd>
 		We had to make a group and create a simple html/css page with a cooking recipe. We each had to do something in the proces and contribute it to a repository on Github.
@@ -24,7 +24,7 @@ GitHub is a web-based hosting service for software development projects that use
 
 [Link to project](https://github.com/AxelVerstappen/recipewebsite)
 
-### Notes
+#### Notes
 Function | GIT command | Description
 --- | --- | ---
 Status | git status | Show what files are ready to be committed or what changes are pending.
@@ -34,7 +34,7 @@ Commit | git commit -m "text doc updated" | Next you can commit the added files 
 Pull | git pull alias branch | Pulling will fetch+merge latest changes from a repository.
 Push | git push | Push your commits to the repository at alias origin and to the branch master
 Removing | git rm -r filename | Romoving a file will delete the selected file from your repository
-Branching | * git checkout -b branchname * git checkout branchname * git merge branchname | Is used to work on your current project without compromising your old version.
+Branching | - git checkout -b branchname | Is used to work on your current project without compromising your old version.
 	
 An overview of all the steps you need when branching
 - git pull
