@@ -53,7 +53,14 @@ If you want to contribute to a project you can't just let anyone commit changes.
 
 <a name="les2">
 ## CSS animations & transitions
-#### 2D transforms
+#### Assignment
+<dl>
+	<dd>
+		After our workshop it was time for a practical approach. We were shows 2 web pages with animations and transitions and had to make them as close as possible to the original.
+	</dd>
+</dl>
+#### Notes
+###### 2D transforms
 With CSS3 transform, we can move, scale, turn, spin, and stretch elements.
 
 A transformation is an effect that lets an element change shape, size and position.
@@ -63,19 +70,19 @@ A transformation is an effect that lets an element change shape, size and positi
 - skew()
 - matrix()
 
-#### 3D transforms
+###### 3D transforms
 CSS3 allows you to format your elements using 3D transforms.
 - rotateX()
 - rotateY()
 
-### animations
+##### animations
 An animation lets an element gradually change from one style to another.
 You can change as many properties you want, as many times you want.
 
 You can specify when the change will happen in percent, or you can use the keywords "from" and "to" (which represents 0% and 100%).
 0% represents the start of the animation, 100% is when the animation is complete.
 
-### transitions
+##### transitions
 CSS3 transitions are effects that let an element gradually change from one style to another.
 
 To do this, you must specify two things:
