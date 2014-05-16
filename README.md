@@ -34,7 +34,7 @@ Commit | git commit -m "text doc updated" | Next you can commit the added files 
 Pull | git pull alias branch | Pulling will fetch+merge latest changes from a repository.
 Push | git push | Push your commits to the repository at alias origin and to the branch master
 Removing | git rm -r filename | Romoving a file will delete the selected file from your repository
-Branching | - git checkout -b branchname - git checkout branchname - git merge branchname | Is used to work on your current project without compromising your old version.
+Branching | * git checkout -b branchname * git checkout branchname * git merge branchname | Is used to work on your current project without compromising your old version.
 	
 An overview of all the steps you need when branching
 - git pull
