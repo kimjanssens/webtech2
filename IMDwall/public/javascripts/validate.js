@@ -1,0 +1,30 @@
+function Validate(){
+	var errors = false;
+	if(document.getElementById("username").value==""){
+		document.getElementById("error").style.display="block";
+		document.getElementById("username").style.borderColor="red";
+		errors=true;
+	}else{
+		document.getElementById("username").style.borderColor="";
+		document.getElementById("error").style.display="none";
+	}
+	if(document.getElementById("message").value==""){
+		document.getElementById("error").style.display="block";
+		document.getElementById("message").style.borderColor="red";
+		errors=true;
+	}else{
+		document.getElementById("message").style.borderColor="";
+		document.getElementById("error").style.display="none";
+	}
+	if(document.getElementById("message").value.length<15){
+		document.getElementById("error2").style.display="block";
+		document.getElementById("message").style.borderColor="red";
+		errors=true;
+	}else{
+		document.getElementById("message").style.borderColor="";
+		document.getElementById("error").style.display="none";
+	}
+	if(errors==false){
+		document.getElementById("form").submit();
+	}
+}

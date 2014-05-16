@@ -1,19 +1,48 @@
 extends layout
 
 block content
-  h1= title
-  h2 All questions
-  ul
-   each question, i in questions
-    li= question.message
+  script.
+   $(document).ready(function(){
+    $(".vote").click(function(e){
+     var questionId = $(this).data("id");
+     $.ajax({
+      type: "POST",
+      url: "/vote",
+      data: { questionId: questionId},
+      dataType: "json"
+     })
+     .done(function( msg ) {
+      console.log(msg);
+     });
+     e.preventDefault();
+    });
+   });
 
-  h2 Your message
-  form(method="post", action="/addquestion")
-   input(type="radio", name="soort", value="question")
-   label(for="question") Question
-   input(type="radio", name="soort", value="answer")
-   label(for="answer") Answer
-   br
-   textarea(placeholder="message", name="message")
-   br
-   button(type="submit") Post message
+  div#container
+   h1= title
+   div#right
+    h2 Current questions
+    ul
+     each question, i in questions
+      li.popup(class="#{question.type}")
+       a(href="#", data-id="question._id", class="vote")
+        span= question.votes
+        h3= question.username
+        p= question.message
+   div#left
+    h2 Ask your question here
+    form(method="post", action="/addquestion", id="form")
+     label(id="error") All fields are required
+     label(id="error2") Message most be longer than 15 characters
+     input(type="text", placeholder="Your name here", name="username", class="input", id="username")
+     br
+     input(type="radio", name="soort", value="question", class="type", checked)
+     label(for="question") Question
+     input(type="radio", name="soort", value="answer", class="type")
+     label(for="answer") Answer
+     br
+     textarea(placeholder="And message", name="message", class="input", id="message")
+     br
+     button.btn(type="button", onClick="Validate()") Post message
+   
+    
