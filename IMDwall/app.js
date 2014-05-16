@@ -1,5 +1,7 @@
 var express = require('express');
+var http = require('http');
 var path = require('path');
+var faye = require('faye');
 var favicon = require('static-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
@@ -12,7 +14,15 @@ var db = monk('mongodb://kim:981663e5@oceanic.mongohq.com:10086/IMDwall');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
+var bayeux = new faye.NodeAdapter({
+  mount:    '/faye',
+  timeout:  45
+});
+
 var app = express();
+
+var server = http.createServer(app);
+bayeux.attach(server);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -65,5 +75,6 @@ app.use(function(err, req, res, next) {
     });
 });
 
+console.log("Server up and listening on port 3000")
 
 module.exports = app;
