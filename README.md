@@ -1,48 +1,55 @@
 webtech2
 ========
 This is a repository of [Kim Janssens](http://www.kimjanssens.be) for the course Webtech 2 from [Interactive Multimedia Design](http://www.weareimd.be/)  at the [Thomas More](http://www.thomasmore.be/) college in Mechelen. Here you will find all the projects of this years course.
-## Github
+
+- [GIT to work](#les1)
+- [CSS animations & transitions](#les2)
+- [Advanced JS](#les3)
+- [Prototype app](#les4)
+- [Terrapke (Prototype app)](#les5)
+- [Node JS](#les6)
+- [SASS](#les7)
+- [GULP JS](#les8)
+
+<a name="les1">
+## GIT to work
 GitHub is a web-based hosting service for software development projects that use the Git revision control system. GitHub offers both paid plans for private repositories, and free accounts for open source projects.
-### Git concepts
-- Status
-	> Show what files are ready to be committed or what changes are pending.
-	- git status
-- Clone 
-	> Copy a repository to your local development system, usually done when setting up a project.
-	- git clone example-url.git
-- Add/commit
-	> First you have to add the files that need to be updated
-	- git add README.md
-	> Next you can commit the added files with a message
-	- git commit -m "text doc updated"
-- Pull/push
-	> Pulling will fetch+merge latest changes from a repository.
-	- git pull alias branch
-	> Push your commits to the repository at alias origin and to the branch master
-	- git push
-- Removing
-	> Romoving a file will delete the selected file from your repository
-	- git rm -r filename
-- Branching
-	> Is used to work on your current project without compromising your old version.
-	- git checkout -b branchname
-	- git checkout branchname
-	- git merge branchname
-- Summary
-	> An overview of all the steps you need when branching
-	- git pull
-	- git checkout -b branchname
-	- git checkout branchname
-	- git add
-	- git commit -m "commit info"
-	- git checkout master
-	- git merge branchname
-	- git push
-- Contribute to git projects
-	> If you want to contribute to a project you can't just let anyone commit changes. By forking you offer a contribution to someones project.
-	- Fork
-	- git fetch upstream
-	- git merge upstream/master
+
+### Assignment
+<dl>
+	<dd>
+		We had to make a group and create a simple html/css page with a cooking recipe. We each had to do something in the proces and contribute it to a repository on Github.
+	</dd>
+</dl>
+
+[Link to project](https://github.com/AxelVerstappen/recipewebsite)
+
+### Notes
+Function | GIT command | Description
+--- | --- | ---
+Status | git status | Show what files are ready to be committed or what changes are pending.
+Clone | git clone example-url.git |Copy a repository to your local development system, usually done when setting up a project.
+Add | git add README.md | First you have to add the files that need to be updated
+Commit | git commit -m "text doc updated" | Next you can commit the added files with a message
+Pull | git pull alias branch | Pulling will fetch+merge latest changes from a repository.
+Push | git push | Push your commits to the repository at alias origin and to the branch master
+Removing | git rm -r filename | Romoving a file will delete the selected file from your repository
+Branching | - git checkout -b branchname - git checkout branchname - git merge branchname | Is used to work on your current project without compromising your old version.
+	
+An overview of all the steps you need when branching
+- git pull
+- git checkout -b branchname
+- git checkout branchname
+- git add
+- git commit -m "commit info"
+- git checkout master
+- git merge branchname
+- git push
+
+If you want to contribute to a project you can't just let anyone commit changes. By forking you offer a contribution to someones project.
+- Fork
+- git fetch upstream
+- git merge upstream/master
 
 ## CSS3 Animations
 ### 2D transforms
