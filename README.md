@@ -51,21 +51,20 @@ If you want to contribute to a project you can't just let anyone commit changes.
 - git fetch upstream
 - git merge upstream/master
 
-## CSS3 Animations
-### 2D transforms
+<a name="les2">
+## CSS animations & transitions
+#### 2D transforms
 With CSS3 transform, we can move, scale, turn, spin, and stretch elements.
 
 A transformation is an effect that lets an element change shape, size and position.
-
 - translate()
 - rotate()
 - scale()
 - skew()
 - matrix()
 
-### 3D transforms
+#### 3D transforms
 CSS3 allows you to format your elements using 3D transforms.
-
 - rotateX()
 - rotateY()
 
@@ -80,7 +79,6 @@ You can specify when the change will happen in percent, or you can use the keywo
 CSS3 transitions are effects that let an element gradually change from one style to another.
 
 To do this, you must specify two things:
-
 - the CSS property you want to add an effect to
 - the duration of the effect
 
