@@ -59,6 +59,9 @@ If you want to contribute to a project you can't just let anyone commit changes.
 		After our workshop it was time for a practical approach. We were shows 2 web pages with animations and transitions and had to make them as close as possible to the original.
 	</dd>
 </dl>
+
+[Link to project](https://github.com/kimjanssens/webtech2/animations)
+
 #### Notes
 ###### 2D transforms
 With CSS3 transform, we can move, scale, turn, spin, and stretch elements. A transformation is an effect that lets an element change shape, size and position.
