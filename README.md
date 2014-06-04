@@ -135,14 +135,14 @@ Getting to know it...
 Sass is the most mature, stable, and powerful professional grade CSS extension language in the world.
 
 #### Notes
-######Installation
+1 Installation
 First I had to download Ruby, I did this [here](http://www.rubyinstaller.org/). After installing it I opened the command prompt and installed ruby like so "gem install sass".
 
-######Setup
+2 Setup
 Now I create a SCSS file instead of the normal CSS file, after that I go to my command prompt and make sure I am in my css map where my stylesheet is and say "sass --watch style.scss:style.css".
 
-######Methods
-########Variables
+3 Methods
+######Variables
 Think of variables as a way to store information that you want to reuse throughout your stylesheet. You can store things like colors, font stacks, or any CSS value you think you'll want to reuse. Sass uses the $ symbol to make something a variable.
 
 	$font-stack:    Helvetica, sans-serif;
@@ -153,7 +153,7 @@ Think of variables as a way to store information that you want to reuse througho
   		color: $primary-color;
   	}
 
-########Nesting
+######Nesting
 When you write HTML you've probably noticed that it has a fairly clear nested, visual hierarchy. CSS, on the other hand, isn't. Sass will let you nest your CSS selectors in a way that follows the same visual hierarchy of your HTML.
 
 	nav {
@@ -167,7 +167,7 @@ When you write HTML you've probably noticed that it has a fairly clear nested, v
   		}
 	}
 
-########Import
+######Import
 CSS has an import option that lets you split your CSS into smaller, more maintainable portions. The only drawback is that each time you use @import in CSS it creates another HTTP request. Sass builds on top of the current CSS @import but instead of requiring an HTTP request, Sass will take the file that you want to import and combine it with the file you're importing into so you can serve a single CSS file to the web browser.
 
 	// _reset.scss
@@ -189,7 +189,7 @@ CSS has an import option that lets you split your CSS into smaller, more maintai
   		background-color: #efefef;
 	}
 
-########Mixins
+######Mixins
 Some things in CSS are a bit tedious to write, especially with CSS3 and the many vendor prefixes that exist. A mixin lets you make groups of CSS declarations that you want to reuse throughout your site. You can even pass in values to make your mixin more flexible. A good use of a mixin is for vendor prefixes. Here's an example for border-radius.
 
 	@mixin border-radius($radius) {
@@ -203,7 +203,7 @@ Some things in CSS are a bit tedious to write, especially with CSS3 and the many
 		@include border-radius(10px);
 	}
 
-########Extend/Inheritance
+######Extend/Inheritance
 This is one of the most useful features of Sass. Using @extend lets you share a set of CSS properties from one selector to another. It helps keep your Sass very DRY. In our example we're going to create a simple series of messaging for errors, warnings and successes.
 
 	.message {
@@ -217,7 +217,7 @@ This is one of the most useful features of Sass. Using @extend lets you share a 
   		border-color: green;
 	}
 
-########Operators
+######Operators
 Doing math in your CSS is very helpful. Sass has a handful of standard math operators like +, -, *, /, and %. In our example we're going to do some simple math to calculate widths for an aside & article.
 
 	article {
