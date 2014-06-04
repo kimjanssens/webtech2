@@ -179,8 +179,8 @@ CSS has an import option that lets you split your CSS into smaller, more maintai
    		margin: 0;
   		padding: 0;
 	}
-	
-'''CSS
+
+'''
 	/* style.scss */
 
 	@import 'reset';
@@ -220,7 +220,7 @@ This is one of the most useful features of Sass. Using @extend lets you share a 
 
 ########Operators
 Doing math in your CSS is very helpful. Sass has a handful of standard math operators like +, -, *, /, and %. In our example we're going to do some simple math to calculate widths for an aside & article.
-'''CSS
+'''
 	article {
   		float: left;
   		width: 600px / 960px * 100%;
