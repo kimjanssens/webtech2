@@ -60,7 +60,7 @@ If you want to contribute to a project you can't just let anyone commit changes.
 	</dd>
 </dl>
 
-[Link to project](https://github.com/kimjanssens/webtech2/animations)
+[Link to project](https://github.com/kimjanssens/webtech2/tree/master/animations)
 
 #### Notes
 ###### 2D transforms
@@ -88,9 +88,11 @@ To do this, you must specify two things:
 - the CSS property you want to add an effect to
 - the duration of the effect
 
+<a name="les3">
 ## Advanced JS
 Here I got a better view of how jQuery works. I made a dateplanner by creating an own framwork with advanced javascript concepts.
 
+<a name="les4">
 ## Prototype App
 This is a weather app I created with the API from forecast.io. Functions I used to make this project:
 
@@ -100,8 +102,10 @@ This is a weather app I created with the API from forecast.io. Functions I used 
 - HTML5 geolocation
 - JSONP
 
+<a name="les5">
 ## Terrapke
 Here I took what I learned from the prototype app and animations and used it to make an app for [WeAreIMD](http://www.weareimd.be/). The goal is to invite people to come grab a drink when the weather is nice.
 
+<a name="les6">
 ## Node.js
 Getting to know it...
