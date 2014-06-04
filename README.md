@@ -51,6 +51,8 @@ If you want to contribute to a project you can't just let anyone commit changes.
 - git fetch upstream
 - git merge upstream/master
 
+* * *
+
 <a name="les2">
 ## CSS animations & transitions
 #### Assignment
@@ -96,9 +98,13 @@ To do this, you must specify two things:
 - http://www.kirupa.com/html5/css3_animations_vs_transitions.htm
 - http://uxrave.com/
 
+* * *
+
 <a name="les3">
 ## Advanced JS
 Here I got a better view of how jQuery works. I made a dateplanner by creating an own framwork with advanced javascript concepts.
+
+* * *
 
 <a name="les4">
 ## Prototype App
@@ -110,17 +116,123 @@ This is a weather app I created with the API from forecast.io. Functions I used 
 - HTML5 geolocation
 - JSONP
 
+* * *
+
 <a name="les5">
 ## Terrapke
 Here I took what I learned from the prototype app and animations and used it to make an app for [WeAreIMD](http://www.weareimd.be/). The goal is to invite people to come grab a drink when the weather is nice.
+
+* * *
 
 <a name="les6">
 ## Node.js
 Getting to know it...
 
+* * *
+
 <a name="les7">
 ## SASS
+Sass is the most mature, stable, and powerful professional grade CSS extension language in the world.
 
 #### Notes
+######Installation
+First I had to download Ruby, I did this [here](http://www.rubyinstaller.org/). After installing it I opened the command prompt and installed ruby like so "gem install sass".
+
+######Setup
+Now I create a SCSS file instead of the normal CSS file, after that I go to my command prompt and make sure I am in my css map where my stylesheet is and say "sass --watch style.scss:style.css".
+
+######Methods
+########Variables
+Think of variables as a way to store information that you want to reuse throughout your stylesheet. You can store things like colors, font stacks, or any CSS value you think you'll want to reuse. Sass uses the $ symbol to make something a variable.
+'''CSS
+	$font-stack:    Helvetica, sans-serif;
+	$primary-color: #333;
+
+	body {
+  		font: 100% $font-stack;
+  		color: $primary-color;
+  	}
+'''
+
+########Nesting
+When you write HTML you've probably noticed that it has a fairly clear nested, visual hierarchy. CSS, on the other hand, isn't. Sass will let you nest your CSS selectors in a way that follows the same visual hierarchy of your HTML.
+'''CSS
+	nav {
+  		ul {
+    		margin: 0;
+    		padding: 0;
+    		list-style: none;
+    		li { 
+    			display: inline-block; 
+    		}
+  		}
+	}
+'''
+
+########Import
+CSS has an import option that lets you split your CSS into smaller, more maintainable portions. The only drawback is that each time you use @import in CSS it creates another HTTP request. Sass builds on top of the current CSS @import but instead of requiring an HTTP request, Sass will take the file that you want to import and combine it with the file you're importing into so you can serve a single CSS file to the web browser.
+'''CSS
+	// _reset.scss
+
+	html,
+	body,
+	ul,
+	ol {
+   		margin: 0;
+  		padding: 0;
+	}
+'''
+'''CSS
+	/* style.scss */
+
+	@import 'reset';
+
+	body {
+  		font-size: 100% Helvetica, sans-serif;
+  		background-color: #efefef;
+	}
+'''
+
+########Mixins
+Some things in CSS are a bit tedious to write, especially with CSS3 and the many vendor prefixes that exist. A mixin lets you make groups of CSS declarations that you want to reuse throughout your site. You can even pass in values to make your mixin more flexible. A good use of a mixin is for vendor prefixes. Here's an example for border-radius.
+'''CSS
+	@mixin border-radius($radius) {
+  		-webkit-border-radius: $radius;
+     	-moz-border-radius: $radius;
+      	-ms-border-radius: $radius;
+        border-radius: $radius;
+	}
+
+	.box { 
+		@include border-radius(10px);
+	}
+'''
+
+########Extend/Inheritance
+This is one of the most useful features of Sass. Using @extend lets you share a set of CSS properties from one selector to another. It helps keep your Sass very DRY. In our example we're going to create a simple series of messaging for errors, warnings and successes.
+'''CSS
+	.message {
+  		border: 1px solid #ccc;
+  		padding: 10px;
+  		color: #333;
+	}
+
+	.success {
+  		@extend .message;
+  		border-color: green;
+	}
+'''
+
+########Operators
+Doing math in your CSS is very helpful. Sass has a handful of standard math operators like +, -, *, /, and %. In our example we're going to do some simple math to calculate widths for an aside & article.
+'''CSS
+	article {
+  		float: left;
+  		width: 600px / 960px * 100%;
+	}
+'''
 
 #### Related articles
+- http://www.smashingmagazine.com/2012/04/16/a-new-front-end-methodology-bem/
+- http://www.smashingmagazine.com/2011/12/12/an-introduction-to-object-oriented-css-oocss/
+- http://alistapart.com/article/getting-started-with-sass
