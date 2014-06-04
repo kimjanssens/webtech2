@@ -220,7 +220,6 @@ This is one of the most useful features of Sass. Using @extend lets you share a 
 
 ########Operators
 Doing math in your CSS is very helpful. Sass has a handful of standard math operators like +, -, *, /, and %. In our example we're going to do some simple math to calculate widths for an aside & article.
-'''CSS
 
 	article {
   		float: left;
