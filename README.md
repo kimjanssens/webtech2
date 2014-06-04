@@ -88,6 +88,14 @@ To do this, you must specify two things:
 - the CSS property you want to add an effect to
 - the duration of the effect
 
+#### Related articles
+- http://www.sitepoint.com/advanced-css3-2d-and-3d-transform-techniques/
+- http://learn.shayhowe.com/advanced-html-css/css-transforms/
+- http://learn.shayhowe.com/advanced-html-css/transitions-animations/
+- http://css3.bradshawenterprises.com/transitions/
+- http://www.kirupa.com/html5/css3_animations_vs_transitions.htm
+- http://uxrave.com/
+
 <a name="les3">
 ## Advanced JS
 Here I got a better view of how jQuery works. I made a dateplanner by creating an own framwork with advanced javascript concepts.
@@ -109,3 +117,10 @@ Here I took what I learned from the prototype app and animations and used it to 
 <a name="les6">
 ## Node.js
 Getting to know it...
+
+<a name="les7">
+## SASS
+
+#### Notes
+
+#### Related articles
