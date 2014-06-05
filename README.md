@@ -126,7 +126,17 @@ Here I took what I learned from the prototype app and animations and used it to 
 
 <a name="les6">
 ## Node.js
-Getting to know it...
+
+[Link to project](https://github.com/kimjanssens/webtech2/tree/master/IMDwall)
+
+####Notes
+1 Installation
+First I had to download and install node js from the website [here](http://nodejs.org/), after that I opened my command prompt to set up my project.
+
+2 Setup
+First get express by writing "npm install -g express-generator", "-g" stands for installing express globaly. Now that express is downloaded I use it to generate my app, so I go "express appname" and let the magic work.
+
+Now in my package.json there is a list of modules waiting to be installed, to do this in the command prompt I type "npm install" and all listed modules will be installed. To view my project I type "npm start" and now I can view it on my localhost on port 3000.
 
 * * *
 
