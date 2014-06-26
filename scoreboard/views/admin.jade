@@ -8,3 +8,13 @@ block content
    input(type="text", placeholder="country 1", name="country1")
    input(type="text", placeholder="country 2", name="country2")
    input(type="submit", value="create")
+
+  ul
+   each game, i in games
+    li
+     p= game.country1 + " " + game.score1 + " - " + game.score2 + " " + game.country2
+     hr
+     p= game.shots1 + " Total shots " + game.shots2
+     p= game.fouls1 + " Fouls " + game.fouls2
+     hr
+     p= game.feeds

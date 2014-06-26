@@ -7,7 +7,15 @@ router.get('/', function(req, res) {
 });
 
 router.get('/admin', function(req, res) {
-  res.render('admin', { title: 'Admin page' });
+	var db = req.db;
+	var collection = db.get('games');
+    
+    collection.find({},{},function(e,docs){
+        res.render('admin', {
+            "games" : docs,
+            title: "Admin page"
+        });
+    });
 });
 
 router.post('/create', function(req, res) {
