@@ -7,7 +7,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var mongo = require('mongodb');
+var mongodb = require('mongodb');
 var monk = require('monk');
 var db = monk('mongodb://kim:981663e5@kahana.mongohq.com:10058/IMDwall');
 
