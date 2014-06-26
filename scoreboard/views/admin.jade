@@ -4,7 +4,7 @@ block content
   h1= title
   p Welcome to #{title}
 
-  form
-   input(type="text", placeholder="country 1")
-   input(type="text", placeholder="country 2")
+  form(method="post", action="/create")
+   input(type="text", placeholder="country 1", name="country1")
+   input(type="text", placeholder="country 2", name="country2")
    input(type="submit", value="create")
