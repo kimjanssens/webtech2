@@ -100,4 +100,22 @@ router.post('/feed/:id', function(req, res) {
     });
 });
 
+router.get('/delete/:id', function(req, res) {
+    var db = req.db;
+    var id = req.params.id;
+    var collection = db.get('games');
+
+    collection.remove({
+        "_id" : id
+    }, function (err, doc) {
+        if (err) {
+            res.send("There was a problem");
+        }
+        else {
+            res.location("../admin");
+            res.redirect("../admin");
+        }
+    });
+});
+
 module.exports = router;
