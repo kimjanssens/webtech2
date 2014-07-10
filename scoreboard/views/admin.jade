@@ -12,9 +12,18 @@ block content
   ul
    each game, i in games
     li
+     a.increase(href="", data-id=game._id, data-value=game.score1, data-type="score1") plus
+     a(href="#") min
      p= game.country1 + " " + game.score1 + " - " + game.score2 + " " + game.country2
      hr
      p= game.shots1 + " Total shots " + game.shots2
      p= game.fouls1 + " Fouls " + game.fouls2
      hr
-     p= game.feeds
+     ul
+      - for (var n=0; n < game.feeds.length; n++)
+       li= game.feeds[n].feed
+
+     form(method="post", action="feed/"+game._id)
+      textarea(placeholder="00' - New feed", name="feed")
+      input(type="submit", value="Nieuwe feed!")
+     
