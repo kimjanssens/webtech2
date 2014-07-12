@@ -12,4 +12,6 @@ block content
      p= game.shots1 + " Total shots " + game.shots2
      p= game.fouls1 + " Fouls " + game.fouls2
      hr
-     p= game.feeds
+     ul
+      - for (var n=0; n < game.feeds.length; n++)
+       li= game.feeds[n].feed
