@@ -56,12 +56,37 @@ router.post('/create', function(req, res) {
     });
 });
 
-router.get('/vote/:Id/:Value/:Type', function(req, res) {
+router.get('/increase/:Id/:Value/:Type', function(req, res) {
     var db = req.db;
     var id = req.params.Id;
     var type = req.params.Type;
     var value = parseInt(req.params.Value);
     var newValue = value + 1;
+    var collection = db.get('games');
+
+    var updateVal = {};
+    updateVal[type] = newValue;
+
+    collection.update(
+        {"_id" : id},
+        {$set: updateVal}
+    , function (err, doc) {
+        if (err) {
+            res.send("There was a problem");
+        }
+        else {
+            res.location("../../../admin");
+            res.redirect("../../../admin");
+        }
+    });
+});
+
+router.get('/decrease/:Id/:Value/:Type', function(req, res) {
+    var db = req.db;
+    var id = req.params.Id;
+    var type = req.params.Type;
+    var value = parseInt(req.params.Value);
+    var newValue = value - 1;
     var collection = db.get('games');
 
     var updateVal = {};

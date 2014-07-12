@@ -12,8 +12,8 @@ block content
   ul
    each game, i in games
     li
-     a(href="vote/"+game._id+"/"+game.score1+"/score1") plus
-     a(href="#") min
+     a(href="increase/"+game._id+"/"+game.score1+"/score1") plus
+     a(href="decrease/"+game._id+"/"+game.score1+"/score1") min
      p= game.country1 + " " + game.score1 + " - " + game.score2 + " " + game.country2
      hr
      p= game.shots1 + " Total shots " + game.shots2
