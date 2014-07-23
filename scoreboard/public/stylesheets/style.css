@@ -8,6 +8,9 @@ body {
   vertical-align: middle;
   margin-bottom: 5px; }
 
+hr, br {
+  clear: both; }
+
 #wrapper {
   width: 80%;
   margin: 0 auto; }
@@ -96,6 +99,3 @@ ul {
   border-radius: 5px;
   margin-right: 10px;
   font-size: 1.5em; }
-
-hr, br {
-  clear: both; }
