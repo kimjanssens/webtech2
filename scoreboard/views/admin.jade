@@ -1,39 +1,52 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  header
+   h1= title
 
-  form(method="post", action="/create")
+  form#create.inline(method="post", action="/create")
+   h2 Create new match
    input(type="text", placeholder="country 1", name="country1")
    input(type="text", placeholder="country 2", name="country2")
-   input(type="submit", value="create")
+   input.button(type="submit", value="create")
 
-  ul
+  ul.inline
    each game, i in games
     li
-     a(href="increase/"+game._id+"/"+game.score1+"/score1") plus
-     a(href="decrease/"+game._id+"/"+game.score1+"/score1") min
-     p= game.country1 + " " + game.score1 + " - " + game.score2 + " " + game.country2
-     a(href="increase/"+game._id+"/"+game.score2+"/score2") plus
-     a(href="decrease/"+game._id+"/"+game.score2+"/score2") min
+     div.inline
+      a.up(href="increase/"+game._id+"/"+game.score1+"/score1") +
+      a.down(href="decrease/"+game._id+"/"+game.score1+"/score1") -
+     div.inline
+      p= game.country1 + " " + game.score1 + " - " + game.score2 + " " + game.country2
+     div.inline
+      a.up(href="increase/"+game._id+"/"+game.score2+"/score2") +
+      a.down(href="decrease/"+game._id+"/"+game.score2+"/score2") -
      hr
-     a(href="increase/"+game._id+"/"+game.shots1+"/shots1") plus
-     a(href="decrease/"+game._id+"/"+game.shots1+"/shots1") min
-     p= game.shots1 + " Total shots " + game.shots2
-     a(href="increase/"+game._id+"/"+game.shots2+"/shots2") plus
-     a(href="decrease/"+game._id+"/"+game.shots2+"/shots2") min
-     a(href="increase/"+game._id+"/"+game.fouls1+"/fouls1") plus
-     a(href="decrease/"+game._id+"/"+game.fouls1+"/fouls1") min
-     p= game.fouls1 + " Fouls " + game.fouls2
-     a(href="increase/"+game._id+"/"+game.fouls2+"/fouls2") plus
-     a(href="decrease/"+game._id+"/"+game.fouls2+"/fouls2") min
+     div.inline
+      a.up(href="increase/"+game._id+"/"+game.shots1+"/shots1") +
+      a.down(href="decrease/"+game._id+"/"+game.shots1+"/shots1") -
+     div.inline
+      p= game.shots1 + " Total shots " + game.shots2
+     div.inline
+      a.up(href="increase/"+game._id+"/"+game.shots2+"/shots2") +
+      a.down(href="decrease/"+game._id+"/"+game.shots2+"/shots2") -
+     br
+     div.inline
+      a.up(href="increase/"+game._id+"/"+game.fouls1+"/fouls1") +
+      a.down(href="decrease/"+game._id+"/"+game.fouls1+"/fouls1") -
+     div.inline
+      p= game.fouls1 + " Fouls " + game.fouls2
+     div.inline
+      a.up(href="increase/"+game._id+"/"+game.fouls2+"/fouls2") +
+      a.down(href="decrease/"+game._id+"/"+game.fouls2+"/fouls2") -
      hr
-     ul
+     p REALTIME UPDATES
+     ul.feeds
       - for (var n=0; n < game.feeds.length; n++)
        li= game.feeds[n].feed
 
      form(method="post", action="feed/"+game._id)
       textarea(placeholder="00' - New feed", name="feed")
-      input(type="submit", value="Nieuwe feed!")
-     a(href="/delete/"+game._id) Delete
+
+      input.button.inline(type="submit", value="Nieuwe feed!")
+      a.delete.inline(href="/delete/"+game._id) Delete

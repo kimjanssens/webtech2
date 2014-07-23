@@ -1,0 +1,127 @@
+$font: 'Open Sans Condensed', sans-serif;
+
+$color1 : #000000;
+$color2 : #ffffff;
+$color3 : #032A3B;
+$color4 : #2A3531;
+$color5 : #cccccc;
+
+body{
+	font-family: $font;
+	background-color: $color2;
+	color: $color1;
+}
+.inline{
+	display: inline-block;
+	vertical-align: middle;
+	margin-bottom: 5px;
+}
+#wrapper{
+	width: 80%;
+	margin: 0 auto;
+}
+header{
+	background-color: $color3;
+	margin-bottom:10px;
+
+	h1{
+		font-size:2em;
+		color: $color2;
+		padding: 20px;
+	}
+}
+#create{
+	width:32%;
+	background-color: $color5;
+	vertical-align: top;
+	margin-right:10px;
+	padding: 5px;
+
+	h2{
+		font-size:1.5em;
+		color: $color1;
+		margin-bottom: 10px;
+	}
+}
+
+form{
+	input{
+		display: block;
+		font-family: $font;
+		font-size: 1.5em;
+		padding: 5px;
+		margin-bottom:5px;
+		width: 95%;
+	}
+	textarea{
+		resize: none;
+		width: 250px;
+		height: 30px;
+		font-family: $font;
+		font-size: 1.2em;
+		padding: 5px;
+		margin-right: 5px;
+	}
+	.button{
+		width:100px;
+		cursor: pointer;
+		font-size: 1.2em;
+		vertical-align: top;
+		height: 40px;
+	}
+}
+ul{
+	width: 66%;
+	li{
+		width: 100%;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		margin-bottom: 15px;
+		background-color: $color5;
+		text-align: center;
+		p{
+			font-size: 1.7em;
+			width: 250px;
+		}
+	}
+}
+
+.vote{
+	display: block;
+	text-decoration:none;
+	padding:10px;
+	width: 10px;
+	border-radius: 5px;
+	color: $color2;
+	font-size: 1.7em;
+}
+.up{
+	@extend .vote;
+	background-color:green;
+}
+.down{
+	@extend .vote;
+	background-color:red;
+}
+
+.feeds{
+	margin-bottom: 5px;
+	li{
+		margin:0px;
+		font-weight: bold;
+	}
+}
+.delete{
+	float: right;
+	background-color: red;
+	color: white;
+	text-decoration: none;
+	padding: 5px;
+	border-radius: 5px;
+	margin-right: 10px;
+	font-size: 1.5em;
+}
+
+hr, br{
+	clear:both;
+}
