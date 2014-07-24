@@ -6,9 +6,9 @@ block content
 
   form#create.inline(method="post", action="/create")
    h2 Create new match
-   input(type="text", placeholder="country 1", name="country1")
-   input(type="text", placeholder="country 2", name="country2")
-   input.button(type="submit", value="create")
+   input#country1(type="text", placeholder="country 1", name="country1")
+   input#country2(type="text", placeholder="country 2", name="country2")
+   input.button(type="button", value="create", onClick="newMatch()")
 
   ul.inline
    each game, i in games
@@ -40,13 +40,12 @@ block content
       a.up(href="increase/"+game._id+"/"+game.fouls2+"/fouls2") +
       a.down(href="decrease/"+game._id+"/"+game.fouls2+"/fouls2") -
      hr
+     a.delete.inline(href="/delete/"+game._id) Delete
      p REALTIME UPDATES
      ul.feeds
       - for (var n=0; n < game.feeds.length; n++)
        li= game.feeds[n].feed
 
-     form(method="post", action="feed/"+game._id)
-      textarea(placeholder="00' - New feed", name="feed")
-
-      input.button.inline(type="submit", value="Nieuwe feed!")
-      a.delete.inline(href="/delete/"+game._id) Delete
+     form#updates(method="post", action="feed/"+game._id)
+      textarea#feed(placeholder="00' - New feed", name="feed")
+      input.button.inline(type="button", value="Nieuwe feed!", onClick="newFeed()")

@@ -131,3 +131,46 @@ ul{
 	margin-right: 10px;
 	font-size: 1.5em;
 }
+
+// ANIMATION
+
+.remove{
+	-webkit-animation: Remove 1s forwards;
+    animation: Remove 1s forwards;
+}
+@-webkit-keyframes Remove {
+    0% {
+    	opacity: 1;
+    	-webkit-transform: scale(1);
+        transform: scale(1);
+    }
+    100% {
+    	opacity: 0;
+    	-webkit-transform: scale(0);
+        transform: scale(0);
+    }
+}
+
+.add{
+	-webkit-animation: Add 1s forwards;
+    animation: Add 1s forwards;
+}
+@-webkit-keyframes Add {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateX(300px);
+        transform: translateX(300px);
+    }
+ 
+    70% {
+        opacity: 1;
+        -webkit-transform: translateX(-50px);
+        transform: translateX(-50px);
+    }
+ 
+    100% {
+        opacity: 1;
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}

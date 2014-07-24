@@ -23,6 +23,12 @@ $(document).ready(function() {
 		e.preventDefault();
 	});
 */
+	$("li:first").each(function(){
+		$(this).addClass("add");
+	});
+	$(".delete").click(function(){
+		$(this).parent().addClass("remove");
+	});
 });
 
 function newMatch(){
