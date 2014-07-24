@@ -16,5 +16,9 @@
     "faye": "*",
     "monk": "*",
     "mongodb": "*"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.6",
+    "gulp-uglify": "^0.3.1"
   }
 }
