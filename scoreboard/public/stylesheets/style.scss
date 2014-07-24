@@ -25,6 +25,7 @@ hr, br{
 #wrapper{
 	width: 80%;
 	margin: 0 auto;
+	text-align: center;
 }
 
 header{
@@ -91,6 +92,7 @@ ul{
 		p{
 			font-size: 1.7em;
 			width: 250px;
+			margin: 0 auto;
 		}
 	}
 }
@@ -114,6 +116,7 @@ ul{
 }
 
 .feeds{
+	margin: 0 auto;
 	margin-bottom: 5px;
 	li{
 		margin:0px;

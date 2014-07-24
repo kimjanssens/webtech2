@@ -6,7 +6,9 @@ router.get('/', function(req, res) {
     var db = req.db;
     var collection = db.get('games');
 
-    collection.find({},{},function(e,docs){
+    collection.find({},{
+        "sort": [['post_date', 'desc'],['_id', 'asc']]
+    },function(e,docs){
         res.render('index', {
             "games" : docs,
             title: "Scoreboard"

@@ -1,10 +1,10 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  header
+   h1 Welcome to #{title}
 
-  ul
+  ul(style="width:100%;")
    each game, i in games
     li
      p= game.country1 + " " + game.score1 + " - " + game.score2 + " " + game.country2
@@ -12,6 +12,7 @@ block content
      p= game.shots1 + " Total shots " + game.shots2
      p= game.fouls1 + " Fouls " + game.fouls2
      hr
-     ul
+     p REALTIME UPDATES
+     ul.feeds
       - for (var n=0; n < game.feeds.length; n++)
        li= game.feeds[n].feed

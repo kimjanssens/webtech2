@@ -13,7 +13,8 @@ hr, br {
 
 #wrapper {
   width: 80%;
-  margin: 0 auto; }
+  margin: 0 auto;
+  text-align: center; }
 
 header {
   background-color: #032a3b;
@@ -67,7 +68,8 @@ ul {
     text-align: center; }
     ul li p {
       font-size: 1.7em;
-      width: 250px; }
+      width: 250px;
+      margin: 0 auto; }
 
 .vote, .up, .down {
   display: block;
@@ -85,6 +87,7 @@ ul {
   background-color: red; }
 
 .feeds {
+  margin: 0 auto;
   margin-bottom: 5px; }
   .feeds li {
     margin: 0px;
